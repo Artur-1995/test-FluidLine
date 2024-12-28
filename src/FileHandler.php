@@ -16,7 +16,6 @@ class FileHandler
             if (isset($_FILES['file'])) {
                 $filename = $_FILES['file']['name'];
                 if (!$this->copyUploadFile($filename)) {
-                    // Logger::log([__CLASS__, __FUNCTION__], 'file');
                     exit();
                 }
             }
@@ -33,7 +32,7 @@ class FileHandler
 
                 while (($line = fgets($handle)) !== false) {
                     $line = trim($line);
-                    $firstLetter = mb_substr($line, 0, 1);
+                    $firstLetter = mb_strtolower(mb_substr($line, 0, 1));
                     $letterCount = mb_substr_count($line, $firstLetter);
                     if (!isset($letters[$firstLetter])) {
                         $letters[$firstLetter] = [
