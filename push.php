@@ -159,7 +159,7 @@ class MockDatabaseConnector extends DatabaseConnector
     /**
      * Метод обновления записим
      * 
-     * @param $id id записи в таблице letters
+     * @param string $id id записи в таблице letters
      */
     public function update($id = ''): void
     {
@@ -174,7 +174,7 @@ class MockDatabaseConnector extends DatabaseConnector
     /**
      * Метод удаления записи
      * 
-     * @param $id id записи в таблице letters
+     * @param string $id id записи в таблице letters
      */
     public function delete($id = ''): void
     {
